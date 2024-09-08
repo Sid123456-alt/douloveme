@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Question</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe6f2;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .teddy {
+            font-size: 100px;
+        }
+        #question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #yes-btn, #no-btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 5px;
+        }
+        #yes-btn {
+            background-color: #ff99cc;
+            color: white;
+        }
+        #no-btn {
+            background-color: #ff6666;
+            color: white;
+        }
+        #message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ff66b2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="teddy">🐻</div>
+        <div id="question">Do you love me? 💖</div>
+        <button id="yes-btn" onclick="showLove()">Yes 💕</button>
+        <button id="no-btn" onmouseover="moveNoBtn()">No 😔</button>
+        <div id="message">Me too! 🎀🎀🎀</div>
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById('message').style.display = 'block';
+        }
+
+        function moveNoBtn() {
+            const noBtn = document.getElementById('no-btn');
+            const randomX = Math.floor(Math.random() * (window.innerWidth - 100)) + 'px';
+            const randomY = Math.floor(Math.random() * (window.innerHeight - 100)) + 'px';
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = randomX;
+            noBtn.style.top = randomY;
+        }
+    </script>
+
+</body>
+</html>
